@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 export default function ContactPage() {
     return (
       <main className="min-h-screen bg-[#f7f4ef] text-[#111111]">
+        <Navbar />
         <section className="mx-auto max-w-4xl px-6 py-24">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-black/50">
             Contact
