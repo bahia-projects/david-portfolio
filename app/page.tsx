@@ -51,19 +51,32 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4">
-          <div className="aspect-[4/5] rounded-3xl border border-black/10 bg-black/10 p-6 shadow-sm">
-            <div className="flex h-full items-end rounded-2xl bg-[#ded8cc] p-6">
-              <p className="text-sm text-black/50">
-                Image placeholder
-              </p>
-            </div>
-          </div>
+  <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-black/10 bg-black/10 shadow-sm">
+    <img
+      src="/images/hero.jpg"
+      alt="Portfolio hero image"
+      className="h-full w-full object-cover"
+    />
+  </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="aspect-square rounded-2xl bg-[#d8d2c5]" />
-            <div className="aspect-square rounded-2xl bg-[#c8c0b2]" />
-          </div>
-        </div>
+  <div className="grid grid-cols-2 gap-4">
+    <div className="aspect-square overflow-hidden rounded-2xl bg-black/10">
+      <img
+        src="/images/work-1.jpg"
+        alt="Portfolio image"
+        className="h-full w-full object-cover"
+      />
+    </div>
+
+    <div className="aspect-square overflow-hidden rounded-2xl bg-black/10">
+      <img
+        src="/images/workflow-2.jpg"
+        alt="Portfolio image"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  </div>
+</div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
