@@ -1,3 +1,5 @@
+import Navbar from "../components/Navbar";
+
 export default function ContactPage() {
     return (
       <main className="min-h-screen bg-[#f7f4ef] text-[#111111]">
