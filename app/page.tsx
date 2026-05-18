@@ -107,13 +107,11 @@ export default function Home() {
           </p>
 
           <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
-            Building better systems for high-volume digital publishing.
+            Moving platforms into the AI future.
           </h2>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            I specialize in turning messy editorial operations into scalable
-            product systems: cleaner workflows, fewer manual steps, better
-            visibility, and faster publishing.
+            I'm focused on integrating platforms and workflows with AI to create a more efficient and effective way to work.
           </p>
         </div>
       </section>
