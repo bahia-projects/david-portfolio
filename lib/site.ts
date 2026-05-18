@@ -17,7 +17,7 @@ export const siteConfig = {
     "Senior Product Manager focused on platform systems, AI automation, workflow infrastructure, and revenue-driving digital products.",
   url: getSiteUrl(),
   locale: "en_US",
-  ogImage: "/images/hero.jpg",
+  ogImage: "/images/hero-banner.png",
   email: "davidhbahia@gmail.com",
   phone: "+1-415-937-8585",
   linkedIn: "https://www.linkedin.com/in/david-bahia/",
