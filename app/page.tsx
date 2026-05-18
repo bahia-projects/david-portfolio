@@ -1,3 +1,5 @@
+import ImageLightbox from "./components/ImageLightbox";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-[#111111]">
@@ -52,28 +54,25 @@ export default function Home() {
 
         <div className="grid gap-4">
   <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-black/10 bg-black/10 shadow-sm">
-    <img
-      src="/images/hero.jpg"
-      alt="Portfolio hero image"
-      className="h-full w-full object-cover"
-    />
+            <ImageLightbox
+              src="/images/hero.jpg"
+              alt="Portfolio hero image"
+            />
   </div>
 
   <div className="grid grid-cols-2 gap-4">
     <div className="aspect-square overflow-hidden rounded-2xl bg-black/10">
-      <img
-        src="/images/work-1.jpg"
-        alt="Portfolio image"
-        className="h-full w-full object-cover"
-      />
+              <ImageLightbox
+                src="/images/work-1.jpg"
+                alt="Portfolio image"
+              />
     </div>
 
     <div className="aspect-square overflow-hidden rounded-2xl bg-black/10">
-      <img
-        src="/images/workflow-2.jpg"
-        alt="Portfolio image"
-        className="h-full w-full object-cover"
-      />
+              <ImageLightbox
+                src="/images/workflow-2.jpg"
+                alt="Portfolio image"
+              />
     </div>
   </div>
 </div>
