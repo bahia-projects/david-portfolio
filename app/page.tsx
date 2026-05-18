@@ -66,6 +66,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="rounded-[2rem] bg-black p-8 text-white md:p-12">
+          <p className="text-sm uppercase tracking-[0.25em] text-white/50">
+            Current focus
+          </p>
+
+          <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
+            Moving platforms into the AI future.
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
+            I'm focused on integrating platforms and workflows with AI to create a more efficient and effective way to work.
+          </p>
+        </div>
+      </section>
+
       <section className="border-t border-black/10 bg-white/40">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -100,21 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="rounded-[2rem] bg-black p-8 text-white md:p-12">
-          <p className="text-sm uppercase tracking-[0.25em] text-white/50">
-            Current focus
-          </p>
-
-          <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
-            Moving platforms into the AI future.
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            I'm focused on integrating platforms and workflows with AI to create a more efficient and effective way to work.
-          </p>
-        </div>
-      </section>
+      
     </main>
   );
 }
