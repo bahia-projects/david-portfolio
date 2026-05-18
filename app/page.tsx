@@ -21,7 +21,7 @@ export default function Home() {
       <section className="mx-auto grid min-h-[80vh] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.2fr_.8fr]">
         <div>
           <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-black/50">
-            Product · Publishing Systems · Workflow Automation
+            Product Platforms · AI Systems · Workflow Automation
           </p>
 
           <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl">
@@ -29,8 +29,8 @@ export default function Home() {
           </h1>
 
           <p className="mt-8 max-w-2xl text-xl leading-8 text-black/70">
-            Senior Product Manager focused on internal platforms, AI integrations and workflows, 
-            APIs, AI automation, and revenue-driving tools.
+            Senior Product Manager focused on internal platforms, AI automations and workflows, 
+            and revenue-driving tools.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">

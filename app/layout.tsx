@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "David Bahia - Product Manager",
+  title: "David Bahia - Product Led Innovation",
   description: "Vibe coded with wreckless abandon",
 };
 
