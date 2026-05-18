@@ -25,7 +25,7 @@ export default function Home() {
           </p>
 
           <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl">
-            Moving platforms forward with scaleable systems, AI tools and itegrations and modern web experiences.
+            Moving platforms forward with scaleable systems, AI tools and integrations and modern web experiences.
           </h1>
 
           <p className="mt-8 max-w-2xl text-xl leading-8 text-black/70">
