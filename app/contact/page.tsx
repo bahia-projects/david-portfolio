@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
+import JsonLd from "../components/JsonLd";
 import Navbar from "../components/Navbar";
+import { createContactPageJsonLd, createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact",
+  description:
+    "Contact David Bahia for product leadership, platform systems, AI automation, consulting, and collaboration opportunities. Based in Portland, Oregon.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
     return (
       <main className="min-h-screen bg-[#f7f4ef] text-[#111111]">
+        <JsonLd data={createContactPageJsonLd()} />
         <Navbar />
         <section className="mx-auto max-w-4xl px-6 py-24">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-black/50">

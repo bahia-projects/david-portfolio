@@ -1,8 +1,22 @@
+import type { Metadata } from "next";
 import ImageLightbox from "./components/ImageLightbox";
+import JsonLd from "./components/JsonLd";
+import { createPageMetadata, createPersonJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = createPageMetadata({
+  title: `${siteConfig.name} | ${siteConfig.tagline}`,
+  description:
+    "Senior Product Manager building scalable platform systems, AI automations, workflow infrastructure, and modern web experiences for enterprise digital products.",
+  path: "/",
+  imageAlt: "David Bahia portfolio hero image",
+  absoluteTitle: true,
+});
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-[#111111]">
+      <JsonLd data={createPersonJsonLd()} />
       <nav className="border-b border-black/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <a href="/" className="text-sm font-semibold tracking-tight">

@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
+import JsonLd from "../components/JsonLd";
 import Navbar from "../components/Navbar";
+import { createAboutPageJsonLd, createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "About",
+  description:
+    "Learn about David Bahia, Senior Product Manager with 9+ years building scalable platform products, workflow infrastructure, and monetization systems at Gen Digital, Forbes Advisor, Red Ventures, and Healthline Media.",
+  path: "/about",
+});
 
 export default function AboutPage() {
     return (
       <main className="min-h-screen bg-white text-black">
+      <JsonLd data={createAboutPageJsonLd()} />
       <Navbar />
         <section className="max-w-3xl mx-auto px-6 py-24">
           <h1 className="text-5xl font-bold mb-8">
