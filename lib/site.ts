@@ -12,7 +12,7 @@ function getSiteUrl(): string {
 
 export const siteConfig = {
   name: "David Bahia",
-  tagline: "Senior Product Manager",
+  tagline: "Product Management and AI Innovation",
   description:
     "Senior Product Manager focused on platform systems, AI automation, workflow infrastructure, and revenue-driving digital products.",
   url: getSiteUrl(),
