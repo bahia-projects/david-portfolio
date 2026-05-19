@@ -18,13 +18,22 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-[#111111]">
       <JsonLd data={createPersonJsonLd()} />
-      <nav className="border-b border-black/10">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link href="/" className="text-5xl font-extrabold tracking-tight">
+      <header className="relative h-56 w-full md:h-72">
+        <img
+          src="/images/hero-banner.png"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/25" aria-hidden />
+        <nav className="relative z-10 mx-auto flex h-full max-w-6xl items-start justify-between px-6 pt-5">
+          <Link
+            href="/"
+            className="text-5xl font-extrabold tracking-tight text-white"
+          >
             David Bahia
           </Link>
 
-          <div className="flex gap-6 text-sm font-bold">
+          <div className="flex gap-6 pt-2 text-sm font-bold text-white">
             <Link href="/about" className="hover:underline">
               About
             </Link>
@@ -35,10 +44,10 @@ export default function Home() {
               Contact
             </Link>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
-      <section className="mx-auto grid min-h-[40vh] max-w-6xl items-center gap-6 px-6 py-5 md:grid-cols-[1.2fr_.8fr]">
+      <section className="mx-auto grid max-w-6xl items-center gap-6 px-6 py-12 md:grid-cols-[1.2fr_.8fr] md:py-16">
         <div>
           <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-black/50">
             Product Platforms · AI Systems · Workflow Automation
