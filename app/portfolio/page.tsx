@@ -98,6 +98,10 @@ const portfolioProjects: PortfolioProject[] = [
       src: "/images/headless-cms.png",
       alt: "Headless CMS",
     },
+    {
+      src: "/images/work-1.jpg",
+      alt: "Editing Queue",
+    },
   ],
   },
 ];
