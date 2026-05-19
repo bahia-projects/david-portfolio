@@ -24,7 +24,7 @@ export default function Home() {
             David Bahia
           </Link>
 
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-6 text-sm font-bold">
             <Link href="/about" className="hover:underline">
               About
             </Link>
