@@ -29,7 +29,7 @@ export default function Home() {
           <div className="mx-auto flex max-w-6xl items-start justify-between px-6 py-5">
           <Link
             href="/"
-            className="text-5xl font-extrabold tracking-tight md:text-8xl"
+            className="text-5xl font-extrabold tracking-tight md:text-9xl"
           >
             David Bahia
           </Link>
