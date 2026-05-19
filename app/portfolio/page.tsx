@@ -83,20 +83,20 @@ const portfolioProjects: PortfolioProject[] = [
     ],
   },
   {
-    title: "Project 5",
+    title: "Monitization",
     images: [
       {
-      src: "/images/bahia-thumb.avif",
-      alt: "Placeholder",
+      src: "/images/offer-card.png",
+      alt: "Offer card",
     },
   ],
   },
   {
-    title: "Project 6",
+    title: "CMS Architecture and Management",
     images: [
       {
-      src: "/images/bahia-thumb.avif",
-      alt: "Placeholder",
+      src: "/images/headless-cms.png",
+      alt: "Headless CMS",
     },
   ],
   },

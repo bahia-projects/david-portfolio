@@ -12,7 +12,7 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function AboutPage() {
     return (
-      <main className="min-h-screen bg-white text-black">
+      <main className="min-h-screen bg-[#f7f4ef] text-black">
       <JsonLd data={createAboutPageJsonLd()} />
       <Navbar />
         <section className="max-w-3xl mx-auto px-6 py-24">
