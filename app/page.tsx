@@ -79,7 +79,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4">
-  <div className="aspect-[5/4] overflow-hidden rounded-3xl border border-black/10 bg-black/10 shadow-sm">
+  <div className="aspect-[5/4] overflow-hidden rounded-sm border bg-black/10 shadow-sm">
             <ImageLightbox
               src="/images/hero.jpg"
               alt="Portfolio hero image"
@@ -87,14 +87,14 @@ export default function Home() {
   </div>
 
   <div className="grid grid-cols-2 gap-4">
-    <div className="aspect-square overflow-hidden rounded-2xl bg-black/10">
+    <div className="aspect-square overflow-hidden rounded-sm bg-black/10">
               <ImageLightbox
                 src="/images/work-1.jpg"
                 alt="Portfolio image"
               />
     </div>
 
-    <div className="aspect-square overflow-hidden rounded-2xl bg-black/10">
+    <div className="aspect-square overflow-hidden rounded-sm bg-black/10">
               <ImageLightbox
                 src="/images/workflow-2.jpg"
                 alt="Portfolio image"
@@ -105,8 +105,8 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="rounded-[2rem] bg-black p-8 text-white md:p-12">
-          <p className="text-sm uppercase tracking-[0.25em] text-white/50">
+        <div className="rounded-xl bg-black p-8 text-white md:p-12">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-white/50">
             Current focus
           </p>
 
