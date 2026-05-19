@@ -27,6 +27,9 @@ export default function Home() {
             <a href="/about" className="hover:underline">
               About
             </a>
+            <a href="/portfolio" className="hover:underline">
+              Portfolio
+            </a>
             <a href="/contact" className="hover:underline">
               Contact
             </a>
