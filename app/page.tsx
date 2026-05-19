@@ -20,7 +20,7 @@ export default function Home() {
       <JsonLd data={createPersonJsonLd()} />
       <nav className="border-b border-black/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link href="/" className="text-sm font-semibold tracking-tight">
+          <Link href="/" className="text-5xl font-extrabold tracking-tight">
             David Bahia
           </Link>
 
@@ -38,13 +38,13 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="mx-auto grid min-h-[80vh] max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.2fr_.8fr]">
+      <section className="mx-auto grid min-h-[40vh] max-w-6xl items-center gap-6 px-6 py-5 md:grid-cols-[1.2fr_.8fr]">
         <div>
           <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-black/50">
             Product Platforms · AI Systems · Workflow Automation
           </p>
 
-          <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl">
+          <h1 className="max-w-4xl text-2xl font-semibold leading-[0.95] tracking-tight md:text-5xl">
             Moving platforms forward with scaleable systems, AI tools and integrations and modern web experiences.
           </h1>
 
@@ -79,7 +79,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4">
-  <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-black/10 bg-black/10 shadow-sm">
+  <div className="aspect-[5/4] overflow-hidden rounded-3xl border border-black/10 bg-black/10 shadow-sm">
             <ImageLightbox
               src="/images/hero.jpg"
               alt="Portfolio hero image"
