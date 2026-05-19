@@ -26,7 +26,7 @@ export default function ContactPage() {
   
           <p className="mt-6 max-w-2xl text-xl leading-8 text-black/65">
             Feel free to reach out regarding product leadership,
-            platform systems, AI automation, API's, consulting,
+            platform systems, AI automation, APIs, consulting,
             or collaboration opportunities.
           </p>
   

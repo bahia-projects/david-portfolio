@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ImageLightbox from "./components/ImageLightbox";
 import JsonLd from "./components/JsonLd";
 import { createPageMetadata, createPersonJsonLd } from "@/lib/seo";
@@ -19,17 +20,20 @@ export default function Home() {
       <JsonLd data={createPersonJsonLd()} />
       <nav className="border-b border-black/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <a href="/" className="text-sm font-semibold tracking-tight">
+          <Link href="/" className="text-sm font-semibold tracking-tight">
             David Bahia
-          </a>
+          </Link>
 
           <div className="flex gap-6 text-sm">
-            <a href="/about" className="hover:underline">
+            <Link href="/about" className="hover:underline">
               About
-            </a>
-            <a href="/contact" className="hover:underline">
+            </Link>
+            <Link href="/portfolio" className="hover:underline">
+              Portfolio
+            </Link>
+            <Link href="/contact" className="hover:underline">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -103,7 +107,7 @@ export default function Home() {
           </h2>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            I'm focused on integrating platforms and workflows with AI to create a more efficient and effective way to work.
+            I&apos;m focused on integrating platforms and workflows with AI to create a more efficient and effective way to work.
           </p>
         </div>
       </section>
