@@ -28,12 +28,12 @@ export default function Home() {
         <nav className="relative z-10 mx-auto flex h-full max-w-6xl items-start justify-between px-6 pt-5">
           <Link
             href="/"
-            className="text-5xl font-extrabold tracking-tight text-white"
+            className="text-9xl font-extrabold tracking-tight text-white"
           >
             David Bahia
           </Link>
 
-          <div className="flex gap-6 pt-2 text-sm font-bold text-white">
+          <div className="flex gap-6 pt-2 text-base font-bold text-white">
             <Link href="/about" className="hover:underline">
               About
             </Link>
