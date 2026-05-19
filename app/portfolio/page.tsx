@@ -32,6 +32,19 @@ const portfolioProjects: PortfolioProject[] = [
     ],
   },
   {
+    title: "API's and Content Syndication",
+    images: [
+      {
+        src: "/images/moneylion-video-syndication.png",
+        alt: "Video Syndication",
+      },
+      {
+        src: "/images/msn-gbr-syndication.png",
+        alt: "GBR Syndication",
+      },
+    ],
+  },
+  {
     title: "Assignments and Notifications",
     images: [
       {
@@ -53,21 +66,21 @@ const portfolioProjects: PortfolioProject[] = [
     ],
   },
   {
-    title: "API's and Content Syndication",
+    title: "Workflow Optimization and Automation",
     images: [
       {
-        src: "/images/moneylion-video-syndication.png",
-        alt: "Video Syndication",
+        src: "/images/workflow-2.jpg",
+        alt: "Jira Workflow",
       },
       {
-        src: "/images/msn-gbr-syndication.png",
-        alt: "GBR Syndication",
+        src: "/images/hero.jpg",
+        alt: "Workflow mapping",
+      },
+      {
+        src: "/images/jira-creation.png",
+        alt: "Jira auto-post creation",
       },
     ],
-  },
-  {
-    title: "Project 4",
-    images: [],
   },
   {
     title: "Project 5",
