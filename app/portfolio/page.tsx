@@ -35,7 +35,7 @@ const portfolioProjects: PortfolioProject[] = [
     title: "Assignments and Notifications",
     images: [
       {
-        src: "/images/wp-assignment-notification.png",
+        src: "/images/Wp-assignment-notification.png",
         alt: "Assignment email notification in WordPress",
       },
       {
