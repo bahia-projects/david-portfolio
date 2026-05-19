@@ -84,11 +84,21 @@ const portfolioProjects: PortfolioProject[] = [
   },
   {
     title: "Project 5",
-    images: [],
+    images: [
+      {
+      src: "/images/bahia-thumb.avif",
+      alt: "Placeholder",
+    },
+  ],
   },
   {
     title: "Project 6",
-    images: [],
+    images: [
+      {
+      src: "/images/bahia-thumb.avif",
+      alt: "Placeholder",
+    },
+  ],
   },
 ];
 
