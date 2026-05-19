@@ -62,6 +62,14 @@ export default function Home() {
             </a>
 
             <a
+              href="/resume.pdf"
+              download="David-Bahia-Resume.pdf"
+              className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black"
+            >
+              Résumé
+            </a>
+
+            <a
               href="/contact"
               className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black"
             >
