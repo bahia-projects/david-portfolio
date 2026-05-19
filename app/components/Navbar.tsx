@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b border-black/10">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex gap-6 font-bold">
+    <nav className="w-full border-b border-black/10 bg-transparent">
+      <div className="mx-auto flex max-w-5xl gap-6 px-6 py-4 font-bold">
         <Link href="/" className="hover:underline">
           Home
         </Link>

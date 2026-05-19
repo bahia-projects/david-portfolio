@@ -25,15 +25,16 @@ export default function Home() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/25" aria-hidden />
-        <nav className="relative z-10 mx-auto flex h-full max-w-6xl items-start justify-between px-6 pt-5">
+        <nav className="relative z-10 w-full bg-transparent text-white">
+          <div className="mx-auto flex max-w-6xl items-start justify-between px-6 py-5">
           <Link
             href="/"
-            className="text-9xl font-extrabold tracking-tight text-white"
+            className="text-5xl font-extrabold tracking-tight md:text-8xl"
           >
             David Bahia
           </Link>
 
-          <div className="flex gap-6 pt-2 text-base font-bold text-white">
+          <div className="flex gap-6 pt-2 text-base font-bold">
             <Link href="/about" className="hover:underline">
               About
             </Link>
@@ -43,6 +44,7 @@ export default function Home() {
             <Link href="/contact" className="hover:underline">
               Contact
             </Link>
+          </div>
           </div>
         </nav>
       </header>
