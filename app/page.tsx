@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImageLightbox from "./components/ImageLightbox";
+import ResumeDownloadLink from "./components/ResumeDownloadLink";
 import JsonLd from "./components/JsonLd";
 import { createPageMetadata, createPersonJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -72,14 +73,8 @@ export default function Home() {
               About Me
             </a>
 
-            <a
-              href="/resume.pdf"
-              download="David-Bahia-Resume.pdf"
-              className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black"
-            >
-              Résumé
-            </a>
-
+            <ResumeDownloadLink className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black" />
+            
             <a
               href="/contact"
               className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black"
