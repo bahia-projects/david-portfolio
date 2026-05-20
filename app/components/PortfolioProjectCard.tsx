@@ -7,13 +7,36 @@ export type PortfolioImage = {
   alt: string;
 };
 
+export type PortfolioProjectDetails = {
+  problem: string;
+  solution: string;
+  outcome: string;
+};
+
 type PortfolioProjectCardProps = {
   title: string;
+  summary: string;
+  details: PortfolioProjectDetails;
   images: PortfolioImage[];
 };
 
+function DetailBlock({ label, text }: { label: string; text: string }) {
+  if (!text.trim()) return null;
+
+  return (
+    <div>
+      <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-black/45">
+        {label}
+      </h3>
+      <p className="mt-2 text-sm leading-7 text-black/75 md:text-base">{text}</p>
+    </div>
+  );
+}
+
 export default function PortfolioProjectCard({
   title,
+  summary,
+  details,
   images,
 }: PortfolioProjectCardProps) {
   const [open, setOpen] = useState(false);
@@ -66,7 +89,7 @@ export default function PortfolioProjectCard({
             type="button"
             onClick={openGallery}
             className="block w-full cursor-zoom-in overflow-hidden rounded-3xl border border-black/10 bg-[#f7f4ef] text-left transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
-            aria-label={`Open gallery: ${title}`}
+            aria-label={`Open project: ${title}`}
           >
             <div className="aspect-[4/3]">
               <img
@@ -83,66 +106,75 @@ export default function PortfolioProjectCard({
         )}
 
         <h2 className="mt-4 text-lg font-semibold tracking-tight">{title}</h2>
-        {hasImages && images.length > 1 ? (
-          <p className="mt-1 text-sm text-black/50">
-            {images.length} images — click to view
-          </p>
+        {summary ? (
+          <p className="mt-2 text-sm leading-6 text-black/65">{summary}</p>
+        ) : null}
+        {hasImages ? (
+          <p className="mt-2 text-sm text-black/45">Click to view details</p>
         ) : null}
       </article>
 
       {open && current ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 md:p-8"
+          className="fixed inset-0 z-50 flex flex-col bg-black/90"
           role="dialog"
           aria-modal="true"
-          aria-label={`${title} gallery`}
-          onClick={close}
+          aria-label={`${title} project details`}
         >
-          <button
-            type="button"
-            onClick={close}
-            className="absolute right-4 top-4 z-10 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
-            aria-label="Close gallery"
-          >
-            Close
-          </button>
+          <div className="flex shrink-0 items-center justify-between px-4 py-3 md:px-6">
+            <p className="text-sm font-medium text-white/70">{title}</p>
+            <button
+              type="button"
+              onClick={close}
+              className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
+              aria-label="Close"
+            >
+              Close
+            </button>
+          </div>
 
-          {images.length > 1 ? (
-            <>
-              <button
-                type="button"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  goPrev();
-                }}
-                className="absolute top-1/2 left-4 z-10 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
-                aria-label="Previous image"
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  goNext();
-                }}
-                className="absolute top-1/2 right-4 z-10 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
-                aria-label="Next image"
-              >
-                →
-              </button>
-              <p className="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 text-sm text-white/70">
-                {index + 1} / {images.length}
-              </p>
-            </>
-          ) : null}
+          <div className="relative flex min-h-0 flex-1 flex-col">
+            <div className="relative flex min-h-0 flex-1 items-center justify-center px-4 pb-2 md:px-8">
+              {images.length > 1 ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={goPrev}
+                    className="absolute top-1/2 left-2 z-10 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 md:left-4"
+                    aria-label="Previous image"
+                  >
+                    ←
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goNext}
+                    className="absolute top-1/2 right-2 z-10 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20 md:right-4"
+                    aria-label="Next image"
+                  >
+                    →
+                  </button>
+                  <p className="absolute bottom-2 left-1/2 z-10 -translate-x-1/2 text-sm text-white/60">
+                    {index + 1} / {images.length}
+                  </p>
+                </>
+              ) : null}
 
-          <img
-            src={current.src}
-            alt={current.alt}
-            className="max-h-[85vh] max-w-[min(90vw,1200px)] rounded-2xl object-contain shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          />
+              <img
+                src={current.src}
+                alt={current.alt}
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+
+            <div className="max-h-[50vh] shrink-0 overflow-y-auto border-t border-black/10 bg-[#f7f4ef] px-6 py-6 md:px-10 md:py-8">
+              <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+              <div className="mt-6 space-y-6">
+                <DetailBlock label="Problem" text={details.problem} />
+                <DetailBlock label="Solution" text={details.solution} />
+                <DetailBlock label="Outcome" text={details.outcome} />
+              </div>
+            </div>
+          </div>
         </div>
       ) : null}
     </>

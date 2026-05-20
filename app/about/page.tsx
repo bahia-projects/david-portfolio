@@ -22,18 +22,10 @@ export default function AboutPage() {
   
           <div className="space-y-6 text-lg leading-8">
             <p>
-            Senior Product Manager with 9+ years of experience building scalable platform products, workflow infrastructure, 
-            and monetization systems across enterprise digital ecosystems including Gen Digital, Forbes Advisor, Red Ventures, and Healthline Media. 
-            </p>
-  
-            <p>
-            Proven track record leading cross-functional teams to modernize legacy platforms, drive platform migrations, 
-            develop AI-enabled operational tooling, and deliver high-impact product initiatives supporting millions of users and large-scale revenue growth. 
-            </p>
-  
-            <p>
-            Experienced in platform strategy, systems integration, automation, product discovery,
-            and translating complex business problems into scalable technical solutions.
+            I've spent most of my career inside the messy middle — between engineering, editorial, and the business — 
+            figuring out how to turn legacy infrastructure into platforms people actually want to use. At Forbes Advisor, 
+            that meant rebuilding content systems that supported tens of millions of readers. At Moneylion, it meant rethinking 
+            how internal tools could be AI-native from the ground up.
             </p>
           </div>
         </section>

@@ -57,12 +57,11 @@ export default function Home() {
           </p>
 
           <h1 className="max-w-4xl text-2xl font-semibold leading-[0.95] tracking-tight md:text-5xl">
-            Moving platforms forward with scaleable systems, AI tools and integrations and modern web experiences.
+          Platform products that ship. AI workflows that stick. Systems built for how teams actually work.
           </h1>
 
           <p className="mt-8 max-w-2xl text-xl leading-8 text-black/70">
-            Senior Product Manager focused on internal platforms, AI automations and workflows, 
-            and revenue-driving tools.
+          9+ years shipping platform products at Forbes, Moneylion, Gobankingrates, Red Ventures, and Healthline — from legacy migrations to AI-powered workflow tooling.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -74,7 +73,7 @@ export default function Home() {
             </a>
 
             <ResumeDownloadLink className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black" />
-            
+
             <a
               href="/contact"
               className="rounded-full border border-black/20 px-6 py-3 text-sm font-medium transition hover:border-black"
@@ -121,7 +120,7 @@ export default function Home() {
           </h2>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            I&apos;m focused on integrating platforms and workflows with AI to create a more efficient and effective way to work.
+          Most AI in the workplace is still bolted on. I'm focused on building it into the platform layer — where it actually changes how teams operate, not just how fast they can prompt.
           </p>
         </div>
       </section>
