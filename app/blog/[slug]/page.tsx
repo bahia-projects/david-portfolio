@@ -9,6 +9,7 @@ import {
   getAllBlogPosts,
   getBlogPostBySlug,
 } from "@/lib/blog";
+import { selectInternalLinksFromDocument } from "@/lib/blog-internal-links";
 import { createBlogPostingJsonLd, createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -61,12 +62,16 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = await getBlogPostBySlug(slug);
+  const [post, allPosts] = await Promise.all([
+    getBlogPostBySlug(slug),
+    getAllBlogPosts(),
+  ]);
 
   if (!post) {
     notFound();
   }
 
+  const internalLinks = selectInternalLinksFromDocument(post.slug, post.body, allPosts);
   const publishedLabel = formatBlogDate(post.publishedDate);
 
   return (
@@ -99,7 +104,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         ) : null}
 
-        <ContentfulRichText document={post.body} />
+        <ContentfulRichText document={post.body} internalLinks={internalLinks} />
       </article>
     </main>
   );
