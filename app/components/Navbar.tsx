@@ -16,6 +16,10 @@ export default function Navbar() {
           Portfolio
         </Link>
 
+        <Link href="/blog" className="hover:underline">
+          Blog
+        </Link>
+
         <Link href="/contact" className="hover:underline">
           Contact
         </Link>

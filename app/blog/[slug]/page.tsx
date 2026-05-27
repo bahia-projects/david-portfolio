@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import ContentfulRichText from "@/app/components/ContentfulRichText";
+import JsonLd from "@/app/components/JsonLd";
 import Navbar from "@/app/components/Navbar";
 import {
   formatBlogDate,
   getAllBlogPosts,
   getBlogPostBySlug,
 } from "@/lib/blog";
-import { createPageMetadata } from "@/lib/seo";
+import { createBlogPostingJsonLd, createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 type BlogPostPageProps = {
@@ -53,6 +54,8 @@ export async function generateMetadata({
     image,
     imageAlt: post.featuredImage?.alt ?? post.title,
     absoluteTitle: Boolean(post.seoTitle),
+    ogType: "article",
+    publishedTime: post.publishedDate,
   });
 }
 
@@ -68,6 +71,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-black">
+      <JsonLd data={createBlogPostingJsonLd(post)} />
       <Navbar />
       <article className="mx-auto max-w-3xl px-6 py-16">
         <header className="mb-10">

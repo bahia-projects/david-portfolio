@@ -36,5 +36,6 @@ export const siteConfig = {
     "content systems",
     "product leadership",
     "Portland",
+    "blog",
   ],
 } as const;

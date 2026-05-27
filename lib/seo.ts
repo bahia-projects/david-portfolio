@@ -9,6 +9,8 @@ type CreatePageMetadataOptions = {
   imageAlt?: string;
   noIndex?: boolean;
   absoluteTitle?: boolean;
+  ogType?: "website" | "article";
+  publishedTime?: string;
 };
 
 export function createPageMetadata({
@@ -19,6 +21,8 @@ export function createPageMetadata({
   imageAlt = `${siteConfig.name} portfolio`,
   noIndex = false,
   absoluteTitle = false,
+  ogType = "website",
+  publishedTime,
 }: CreatePageMetadataOptions): Metadata {
   const canonicalPath = path.startsWith("/") ? path : `/${path}`;
   const canonicalUrl = new URL(canonicalPath, siteConfig.url).toString();
@@ -38,12 +42,15 @@ export function createPageMetadata({
       canonical: canonicalUrl,
     },
     openGraph: {
-      type: "website",
+      type: ogType,
       locale: siteConfig.locale,
       url: canonicalUrl,
       siteName: siteConfig.name,
       title: pageTitle,
       description,
+      ...(ogType === "article" && publishedTime
+        ? { publishedTime }
+        : undefined),
       images: [
         {
           url: image,
@@ -137,5 +144,69 @@ export function createContactPageJsonLd() {
       "Contact David Bahia for product leadership, platform systems, AI automation, and collaboration.",
     url: new URL("/contact", siteConfig.url).toString(),
     mainEntity: createPersonJsonLd(),
+  };
+}
+
+type BlogPostSummary = {
+  slug: string;
+  title: string;
+  summary?: string;
+  publishedDate?: string;
+  featuredImage?: {
+    url: string;
+    alt: string;
+  };
+};
+
+export function createBlogPageJsonLd(
+  posts: Pick<BlogPostSummary, "slug" | "title" | "publishedDate">[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: `Blog | ${siteConfig.name}`,
+    description:
+      "Writing and notes from David Bahia on product management, platform systems, and AI.",
+    url: new URL("/blog", siteConfig.url).toString(),
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: new URL(`/blog/${post.slug}`, siteConfig.url).toString(),
+      ...(post.publishedDate ? { datePublished: post.publishedDate } : undefined),
+    })),
+  };
+}
+
+export function createBlogPostingJsonLd(post: BlogPostSummary) {
+  const postUrl = new URL(`/blog/${post.slug}`, siteConfig.url).toString();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.summary,
+    url: postUrl,
+    mainEntityOfPage: postUrl,
+    ...(post.publishedDate ? { datePublished: post.publishedDate } : undefined),
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    ...(post.featuredImage
+      ? { image: post.featuredImage.url }
+      : {
+          image: new URL(siteConfig.ogImage, siteConfig.url).toString(),
+        }),
   };
 }

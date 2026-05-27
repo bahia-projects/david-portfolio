@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/app/components/JsonLd";
 import Navbar from "@/app/components/Navbar";
 import { formatBlogDate, getAllBlogPosts } from "@/lib/blog";
-import { createPageMetadata } from "@/lib/seo";
+import { createBlogPageJsonLd, createPageMetadata } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -18,6 +19,7 @@ export default async function BlogIndexPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-black">
+      <JsonLd data={createBlogPageJsonLd(posts)} />
       <Navbar />
       <section className="mx-auto max-w-3xl px-6 py-24">
         <h1 className="mb-4 text-5xl font-bold">Blog</h1>

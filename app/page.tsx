@@ -42,6 +42,9 @@ export default function Home() {
             <Link href="/portfolio" className="hover:underline">
               Portfolio
             </Link>
+            <Link href="/blog" className="hover:underline">
+              Blog
+            </Link>
             <Link href="/contact" className="hover:underline">
               Contact
             </Link>
