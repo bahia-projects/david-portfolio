@@ -24,3 +24,75 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes image-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes panel-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-image-in {
+  animation: image-pop-in 0.35s ease-out both;
+}
+
+.animate-backdrop-in {
+  animation: backdrop-in 0.25s ease-out both;
+}
+
+.animate-panel-up {
+  animation: panel-up 0.35s ease-out both;
+}
+
+.image-hover-pop {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .image-hover-pop,
+.group:focus-within .image-hover-pop {
+  transform: scale(1.04);
+  box-shadow:
+    0 20px 40px -12px rgb(0 0 0 / 0.22),
+    0 8px 16px -8px rgb(0 0 0 / 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-image-in,
+  .animate-backdrop-in,
+  .animate-panel-up {
+    animation: none;
+  }
+
+  .image-hover-pop,
+  .group:hover .image-hover-pop,
+  .group:focus-within .image-hover-pop {
+    transform: none;
+    transition: none;
+  }
+}

@@ -12,8 +12,8 @@ type ImageLightboxProps = {
 export default function ImageLightbox({
   src,
   alt,
-  className = "h-full w-full object-cover",
-  wrapperClassName = "block h-full w-full",
+  className = "image-hover-pop h-full w-full object-cover will-change-transform",
+  wrapperClassName = "group block h-full w-full overflow-hidden",
 }: ImageLightboxProps) {
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
@@ -39,7 +39,7 @@ export default function ImageLightbox({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className={`cursor-zoom-in transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30 ${wrapperClassName}`}
+        className={`cursor-zoom-in rounded-sm transition-shadow duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30 group-hover:shadow-lg ${wrapperClassName}`}
         aria-label={`View full size: ${alt}`}
       >
         <img src={src} alt={alt} className={className} />
@@ -47,7 +47,7 @@ export default function ImageLightbox({
 
       {open ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 md:p-8"
+          className="animate-backdrop-in fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 md:p-8"
           role="dialog"
           aria-modal="true"
           aria-label={alt}
@@ -56,7 +56,7 @@ export default function ImageLightbox({
           <button
             type="button"
             onClick={close}
-            className="absolute right-4 top-4 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
+            className="absolute top-4 right-4 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm transition hover:scale-105 hover:bg-white/20"
             aria-label="Close"
           >
             Close
@@ -65,7 +65,7 @@ export default function ImageLightbox({
           <img
             src={src}
             alt={alt}
-            className="max-h-[90vh] max-w-[min(90vw,1200px)] rounded-2xl object-contain shadow-2xl"
+            className="animate-image-in max-h-[90vh] max-w-[min(90vw,1200px)] rounded-2xl object-contain shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           />
         </div>

@@ -33,19 +33,19 @@ export default async function BlogIndexPage() {
         ) : (
           <ul className="space-y-8">
             {posts.map((post) => (
-              <li key={post.slug} className="border-t border-black/10 pt-8">
+              <li key={post.slug} className="group border-t border-black/10 pt-8">
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
                   {post.thumbnail ? (
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="block shrink-0 overflow-hidden rounded-lg bg-black/5 sm:w-48"
+                      className="block shrink-0 overflow-hidden rounded-lg border border-black/10 bg-black/5 shadow-sm transition-shadow duration-300 hover:shadow-md sm:w-48"
                     >
-                      <div className="relative aspect-[16/10] w-full sm:aspect-auto sm:h-28">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden sm:aspect-auto sm:h-28">
                         <Image
                           src={post.thumbnail.url}
                           alt={post.thumbnail.alt}
                           fill
-                          className="object-cover transition duration-200 hover:scale-[1.02]"
+                          className="image-hover-pop object-cover will-change-transform"
                           sizes="(max-width: 640px) 100vw, 192px"
                         />
                       </div>

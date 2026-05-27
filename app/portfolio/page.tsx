@@ -177,7 +177,7 @@ export default function PortfolioPage() {
           Portfolio
         </h1>
 
-        <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {portfolioProjects.map((project) => (
             <PortfolioProjectCard
               key={project.title}

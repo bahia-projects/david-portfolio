@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImageLightbox from "./components/ImageLightbox";
+import NavLink from "./components/NavLink";
 import ResumeDownloadLink from "./components/ResumeDownloadLink";
 import JsonLd from "./components/JsonLd";
 import { createPageMetadata, createPersonJsonLd } from "@/lib/seo";
@@ -35,19 +36,19 @@ export default function Home() {
             David Bahia
           </Link>
 
-          <div className="flex gap-6 pt-2 text-base font-bold">
-            <Link href="/about" className="hover:underline">
+          <div className="flex flex-wrap gap-1 pt-2 text-base font-bold">
+            <NavLink href="/about" variant="inverse">
               About
-            </Link>
-            <Link href="/portfolio" className="hover:underline">
+            </NavLink>
+            <NavLink href="/portfolio" variant="inverse">
               Portfolio
-            </Link>
-            <Link href="/blog" className="hover:underline">
+            </NavLink>
+            <NavLink href="/blog" variant="inverse">
               Blog
-            </Link>
-            <Link href="/contact" className="hover:underline">
+            </NavLink>
+            <NavLink href="/contact" variant="inverse">
               Contact
-            </Link>
+            </NavLink>
           </div>
           </div>
         </nav>
@@ -87,7 +88,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4">
-  <div className="aspect-[5/4] overflow-hidden rounded-sm border bg-black/10 shadow-sm">
+  <div className="group aspect-[5/4] overflow-hidden rounded-sm border border-black/10 bg-black/10 shadow-sm transition-shadow duration-300 hover:shadow-lg">
             <ImageLightbox
               src="/images/hero.jpg"
               alt="Portfolio hero image"
@@ -95,14 +96,14 @@ export default function Home() {
   </div>
 
   <div className="grid grid-cols-2 gap-4">
-    <div className="aspect-square overflow-hidden rounded-sm bg-black/10">
+    <div className="group aspect-square overflow-hidden rounded-sm border border-black/10 bg-black/10 shadow-sm transition-shadow duration-300 hover:shadow-lg">
               <ImageLightbox
                 src="/images/work-1.jpg"
                 alt="Portfolio image"
               />
     </div>
 
-    <div className="aspect-square overflow-hidden rounded-sm bg-black/10">
+    <div className="group aspect-square overflow-hidden rounded-sm border border-black/10 bg-black/10 shadow-sm transition-shadow duration-300 hover:shadow-lg">
               <ImageLightbox
                 src="/images/workflow-2.jpg"
                 alt="Portfolio image"
