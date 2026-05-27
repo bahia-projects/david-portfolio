@@ -132,20 +132,17 @@ const portfolioProjects: PortfolioProject[] = [
     ],
   },
   {
-    title: "Monitization",
-    summary: "Add a short summary for this project.",
-    details: emptyDetails,
-    images: [
-      {
-        src: "/images/offer-card.png",
-        alt: "Offer card",
-      },
-    ],
-  },
-  {
     title: "CMS Architecture and Management",
-    summary: "Add a short summary for this project.",
-    details: emptyDetails,
+    summary:
+      "Building and maintaining the CMS architecture and infrastructure to support the editorial and revenue workflows.",
+    details: {
+      problem:
+        "Multiple sites run from differnet CMS, with differing tools and workflows for each. This made it difficult to share content between sites, and to scale the editorial and revenue workflows.",
+      solution:
+        "Built a headless CMS architecture that allowed for content to be shared between sites, and to scale the editorial and revenue workflows.",
+      outcome:
+        "Reduced operational friction and increased throughput by over 75%.",
+    },
     images: [
       {
         src: "/images/headless-cms.png",
@@ -154,6 +151,17 @@ const portfolioProjects: PortfolioProject[] = [
       {
         src: "/images/work-1.jpg",
         alt: "Editing Queue",
+      },
+    ],
+  },
+  {
+    title: "Monitization",
+    summary: "Add a short summary for this project.",
+    details: emptyDetails,
+    images: [
+      {
+        src: "/images/offer-card.png",
+        alt: "Offer card",
       },
     ],
   },

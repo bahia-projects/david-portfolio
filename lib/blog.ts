@@ -19,11 +19,19 @@ type ContentfulAsset = {
   };
 };
 
+export type BlogPostImage = {
+  url: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
 type BlogPostFields = {
   title?: string;
   slug?: string;
   summary?: string;
   body?: Document;
+  thumbnail?: ContentfulAsset;
   featuredImage?: ContentfulAsset;
   publishedDate?: string;
   seoTitle?: string;
@@ -38,16 +46,31 @@ export type BlogPost = {
   publishedDate?: string;
   seoTitle?: string;
   seoDescription?: string;
-  featuredImage?: {
-    url: string;
-    alt: string;
-    width?: number;
-    height?: number;
-  };
+  thumbnail?: BlogPostImage;
+  featuredImage?: BlogPostImage;
 };
 
 function assetUrl(url: string): string {
   return url.startsWith("//") ? `https:${url}` : url;
+}
+
+function mapContentfulAsset(
+  asset: ContentfulAsset | undefined,
+  fallbackAlt: string,
+): BlogPostImage | undefined {
+  const imageFile = asset?.fields?.file;
+  if (!imageFile?.url) {
+    return undefined;
+  }
+
+  const imageDetails = imageFile.details?.image;
+
+  return {
+    url: assetUrl(imageFile.url),
+    alt: asset?.fields?.title ?? fallbackAlt,
+    width: imageDetails?.width,
+    height: imageDetails?.height,
+  };
 }
 
 function mapBlogPostEntry(entry: Entry): BlogPost | null {
@@ -56,6 +79,7 @@ function mapBlogPostEntry(entry: Entry): BlogPost | null {
     slug,
     summary,
     body,
+    thumbnail,
     featuredImage,
     publishedDate,
     seoTitle,
@@ -65,8 +89,8 @@ function mapBlogPostEntry(entry: Entry): BlogPost | null {
     return null;
   }
 
-  const imageFile = featuredImage?.fields?.file;
-  const imageDetails = imageFile?.details?.image;
+  const mappedThumbnail = mapContentfulAsset(thumbnail, title);
+  const mappedFeaturedImage = mapContentfulAsset(featuredImage, title);
 
   return {
     slug,
@@ -76,14 +100,8 @@ function mapBlogPostEntry(entry: Entry): BlogPost | null {
     publishedDate,
     seoTitle,
     seoDescription,
-    featuredImage: imageFile?.url
-      ? {
-          url: assetUrl(imageFile.url),
-          alt: featuredImage?.fields?.title ?? title,
-          width: imageDetails?.width,
-          height: imageDetails?.height,
-        }
-      : undefined,
+    thumbnail: mappedThumbnail ?? mappedFeaturedImage,
+    featuredImage: mappedFeaturedImage,
   };
 }
 
